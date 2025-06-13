@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/tribuan2/public_html/admin
-    - /bin/rsync -avz --exclude=".git" --exclude="vendor" --exclude="node_modules" ./ $DEPLOYPATH
+    - export DEPLOYPATH=/home/tribuan2/public_html
+    - /bin/rsync -avz --exclude=".git" --exclude="node_modules" --exclude="vendor" ./ $DEPLOYPATH
     - /bin/cp .env $DEPLOYPATH
     - cd $DEPLOYPATH
     - /opt/cpanel/ea-php82/root/usr/bin/php artisan config:cache
