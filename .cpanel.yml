@@ -2,6 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tribuan2/public_html/admin
+    - cd /home/tribuan2/repositories/tribuana-admin-panel
     - /bin/rsync -avz --exclude=".git" --exclude="vendor" --exclude="node_modules" ./ $DEPLOYPATH
     - /bin/cp .env $DEPLOYPATH
     - cd $DEPLOYPATH
